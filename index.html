@@ -49,3 +49,15 @@ document.body.style.color="white";
 
 </body>
 </html>
+<h2 id="jam"></h2>
+
+<script>
+
+function waktu(){
+let t = new Date();
+document.getElementById("jam").innerHTML = t.toLocaleTimeString();
+}
+
+setInterval(waktu,1000);
+
+</script>
