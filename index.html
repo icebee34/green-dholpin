@@ -15,7 +15,7 @@ margin-top:60px;
 button{
 padding:15px 30px;
 font-size:20px;
-background:blue;
+background:red;
 color:white;
 border:none;
 border-radius:10px;
@@ -37,13 +37,15 @@ margin:20px;
 <p>Klik tombol sebanyak mungkin dalam 10 detik!</p>
 
 <h2 id="score">Skor: 0</h2>
-
+<h3 id="highscore">High Score: 0</h3>
 <button onclick="klik()">KLIK!</button>
 
 <p id="timer">Waktu: 10</p>
 
 <script>
+let high = localStorage.getItem("highscore") || 0;
 
+document.getElementById("highscore").innerHTML = "High Score: " + high;
 let skor = 0;
 let waktu = 10;
 let mulai = false;
@@ -69,7 +71,14 @@ document.getElementById("timer").innerHTML = "Waktu: " + waktu;
 
 if(waktu == 0){
 clearInterval(hitung);
+if(skor > high){
+high = skor;
+localStorage.setItem("highscore", high);
+}
+
 alert("Game selesai! Skor kamu: " + skor);
+
+document.getElementById("highscore").innerHTML = "High Score: " + high;
 }
 
 },1000);
