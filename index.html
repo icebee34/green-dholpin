@@ -1,6 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<style>
+
+body{
+text-align:center;
+font-family:Arial;
+}
+
+#target{
+width:80px;
+height:80px;
+background:red;
+border-radius:50%;
+position:absolute;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Game Klik Target 🎯</h1>
+
+<h2 id="score">Skor: 0</h2>
+
+<div id="target" onclick="kena()"></div>
+
+<script>
+
+let skor = 0;
+
+function kena(){
+
+skor++;
+document.getElementById("score").innerHTML = "Skor: " + skor;
+
+let x = Math.random()*300;
+let y = Math.random()*400;
+
+document.getElementById("target").style.left = x + "px";
+document.getElementById("target").style.top = y + "px";
+
+}
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
 <title>Game Klik Cepat</title>
 
 <style>
