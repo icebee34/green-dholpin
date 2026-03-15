@@ -1,53 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Website Ashfal</title>
+<title>Game Klik Cepat</title>
 
 <style>
 
 body{
-margin:0;
 font-family:Arial;
-background:#f2f2f2;
 text-align:center;
-}
-
-/* navbar */
-
-.navbar{
-background:#333;
-padding:15px;
-}
-
-.navbar a{
-color:white;
-margin:15px;
-text-decoration:none;
-font-size:18px;
-}
-
-/* hero */
-
-.hero{
-padding:60px;
-}
-
-img{
-width:150px;
-border-radius:50%;
+background:#f2f2f2;
+margin-top:60px;
 }
 
 button{
-padding:10px 20px;
+padding:15px 30px;
+font-size:20px;
 background:blue;
 color:white;
 border:none;
-border-radius:8px;
-font-size:16px;
-}button:hover{
-background:red;
-transform:scale(1.1);
-transition:0.3s;
+border-radius:10px;
+}
+
+#score{
+font-size:30px;
+margin:20px;
 }
 
 </style>
@@ -56,29 +32,48 @@ transition:0.3s;
 
 <body>
 
-<div class="navbar">
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
-</div>
+<h1>Game Klik Cepat 🎮</h1>
 
-<div class="hero">
+<p>Klik tombol sebanyak mungkin dalam 10 detik!</p>
 
-<h1>Halo Saya Ashfal</h1>
+<h2 id="score">Skor: 0</h2>
 
-<img src="https://picsum.photos/200">
+<button onclick="klik()">KLIK!</button>
 
-<p>Saya sedang belajar coding dari HP 🚀</p>
-
-<button onclick="dark()">Dark Mode</button>
-
-</div>
+<p id="timer">Waktu: 10</p>
 
 <script>
 
-function dark(){
-document.body.style.background="black";
-document.body.style.color="white";
+let skor = 0;
+let waktu = 10;
+let mulai = false;
+
+function klik(){
+
+if(!mulai){
+mulai = true;
+timer();
+}
+
+skor++;
+document.getElementById("score").innerHTML = "Skor: " + skor;
+
+}
+
+function timer(){
+
+let hitung = setInterval(function(){
+
+waktu--;
+document.getElementById("timer").innerHTML = "Waktu: " + waktu;
+
+if(waktu == 0){
+clearInterval(hitung);
+alert("Game selesai! Skor kamu: " + skor);
+}
+
+},1000);
+
 }
 
 </script>
