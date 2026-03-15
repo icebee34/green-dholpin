@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profil Saya</title>
+<button onclick="darkMode()">Dark Mode</button>
+<button onclick="lightMode()">Light Mode</button>
+<style>
+
+body{
+font-family: Arial;
+text-align:center;
+background-color:#f2f2f2;
+}
+
+img{
+width:150px;
+border-radius:50%;
+}
+
+.card{
+background:white;
+padding:20px;
+margin:50px auto;
+width:300px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+}
+
+button{
+padding:10px 20px;
+background-color:blue;
+color:white;
+border:none;
+border-radius:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="https://picsum.photos/200">
+
+<h2>Ashfal</h2>
+
+<p>Saya sedang belajar coding dari HP 🚀</p>
+
+<p>Hobi: Belajar hal baru</p>
+
+<button onclick="pesan()">Klik Saya</button>
+
+</div>
+
+<script>function darkMode(){
+document.body.style.backgroundColor = "black";
+document.body.style.color = "white";
+}function lightMode(){
+document.body.style.backgroundColor = "white";
+document.body.style.color = "black";
+}
+
+function pesan(){
+alert("Terima kasih sudah mengunjungi website saya 😄");
+}
+
+</script>
+
+</body>
+</html>
