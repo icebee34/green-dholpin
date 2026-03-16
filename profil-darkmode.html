@@ -4,7 +4,22 @@
 <title>Portfolio Ashfal</title>
 
 <style>
+@keyframes muncul{
+from{
+opacity:0;
+transform:translateY(30px);
+}
 
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.section{
+padding:60px;
+animation:muncul 1s ease;
+}
 body{
 margin:0;
 font-family:Arial;
@@ -36,7 +51,10 @@ padding:20px;
 border-radius:10px;
 box-shadow:0 0 10px gray;
 }
-
+.card:hover{
+transform:scale(1.05);
+transition:0.3s;
+}
 img{
 width:150px;
 border-radius:50%;
