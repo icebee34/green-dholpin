@@ -83,7 +83,18 @@ border-radius:8px;
 
 <div class="section">
 
-<h1>Halo Saya Ashfal</h1>
+<h1 id="typing"></h1>let text = "Halo Saya Ashfal 🚀";
+let i = 0;
+
+function ketik(){
+if(i < text.length){
+document.getElementById("typing").innerHTML += text.charAt(i);
+i++;
+setTimeout(ketik,100);
+}
+}
+
+ketik();
 
 <img src="https://picsum.photos/200">
 
