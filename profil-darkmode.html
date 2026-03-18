@@ -15,11 +15,17 @@ opacity:1;
 transform:translateY(0);
 }
 }
-
-.section{
-padding:60px;
-animation:muncul 1s ease;
+.hidden{
+opacity:0;
+transform:translateY(30px);
+transition:0.5s;
 }
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+<div class="section hidden">
 body{
 margin:0;
 font-family:Arial;
@@ -39,8 +45,7 @@ text-decoration:none;
 font-size:18px;
 }
 
-.section{
-padding:60px;
+<div class="section hidden">
 }
 
 .card{
@@ -81,7 +86,7 @@ border-radius:8px;
 <a href="#contact">Contact</a>
 </div>
 
-<div class="section">
+<div class="section hidden">
 
 <h1 id="typing"></h1>let text = "Halo Saya Ashfal 🚀";
 let i = 0;
@@ -102,7 +107,7 @@ ketik();
 
 </div>
 
-<div class="section" id="about">
+<div class="section" id="about"><div class="section hidden">
 
 <h2>About Me</h2>
 
@@ -110,7 +115,7 @@ ketik();
 
 </div>
 
-<div class="section" id="project">
+<div class="section" id="project"><div class="section hidden">
 
 <h2>My Projects</h2>
 
@@ -126,8 +131,19 @@ ketik();
 
 </div>
 
-<div class="section" id="contact">
+<div class="section" id="contact"><div class="section hidden">
+let elements = document.querySelectorAll(".hidden");
 
+window.addEventListener("scroll", function(){
+elements.forEach(el => {
+let posisi = el.getBoundingClientRect().top;
+let tinggiLayar = window.innerHeight;
+
+if(posisi < tinggiLayar - 50){
+el.classList.add("show");
+}
+});
+});
 <h2>Contact</h2>
 
 <p>Email: example@email.com</p>
